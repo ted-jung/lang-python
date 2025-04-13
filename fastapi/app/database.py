@@ -14,7 +14,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-DATABASE_URL = "mysql+asyncmy://root:magic@localhost:3306/myweb?charset=utf8"
+DATABASE_URL = "mysql+asyncmy://root:pass@localhost:3306/myweb?charset=utf8"
 engine = create_async_engine(DATABASE_URL)
 
 # Create a session object from session factory
