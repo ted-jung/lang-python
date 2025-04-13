@@ -42,7 +42,7 @@ async def get_db():
 async def lifespan(app: FastAPI):
     # Code to run before the application starts
     print("Application startup")
-    database.create_tables()
+    await database.create_tables()
     # Initialize resources, connect to databases, etc.
     await asyncio.sleep(1)  # Example startup task
     yield
