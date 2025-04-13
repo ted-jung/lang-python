@@ -9,6 +9,7 @@
 #       with the same resources, leading to better scalability.
 # =============================================================================
 
+import asyncio
 
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
@@ -23,6 +24,6 @@ engine = create_async_engine(DATABASE_URL)
 Ted_Session = sessionmaker(autocommit=False, autoflush=False, bind=engine, class_=AsyncSession)
 Base = declarative_base()
 
-def create_tables():
-    Base.metadata.create_all(bind=engine)
-    print("Tables created successfully")
+async def create_tables():
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
