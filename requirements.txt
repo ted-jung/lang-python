@@ -3,4 +3,8 @@ requests>=2.31.0
 urllib3>=2.0.0
 PyGithub==1.51
 pytz==2019.1
+<<<<<<< HEAD
 six>=1.16.0
+=======
+six>=1.16.0
+>>>>>>> a28289291f25af8907664abce32bf73b4cd5cb5a

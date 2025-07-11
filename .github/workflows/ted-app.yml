@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 name: ted_crawler_test
+=======
+name: ted_app
+>>>>>>> a28289291f25af8907664abce32bf73b4cd5cb5a
 
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   build:
