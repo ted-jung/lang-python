@@ -2,7 +2,7 @@ name: ted_crawler_test
 
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   build:
