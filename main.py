@@ -6,7 +6,7 @@ from github_utils import get_github_repo, upload_github_issue
 
 
 if __name__ == "__main__":
-    access_token = os.environ['MY_GITHUB_TOKEN']
+    # saccess_token = os.environ['MY_GITHUB_TOKEN']
     repository_name = "lang-python"
 
     seoul_timezone = timezone('Asia/Seoul')
@@ -19,6 +19,6 @@ if __name__ == "__main__":
     
     issue_title = f"YES24 IT 신간 도서 알림({today_date})"
     upload_contents = extract_book_data(soup)
-    repo = get_github_repo(access_token, repository_name)
-    upload_github_issue(repo, issue_title, upload_contents)
-    print("Upload Github Issue Success!")
+    # repo = get_github_repo(access_token, repository_name)
+    # upload_github_issue(repo, issue_title, upload_contents)
+    # print("Upload Github Issue Success!")

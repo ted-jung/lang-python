@@ -24,7 +24,7 @@ def extract_book_data(soup):
     """
 
     upload_contents = ''
-    new_books = soup.select("gd_nameE")
+    new_books = soup.select("yesNewList")
     url_prefix = "http://www.yes24.com"
 
     for new_book in new_books:
