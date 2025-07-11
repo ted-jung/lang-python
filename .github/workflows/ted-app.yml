@@ -1,4 +1,4 @@
-name: ted_crawler_test
+name: ted_app
 
 on:
   schedule:
