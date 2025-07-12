@@ -13,12 +13,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
+        uses: actions/checkout@v4           # checkout the code from the repository
+                                            # pulls the latest code
+      - name: Set up Python                 # set up Python environment
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
       - name: Run hello_world.py
         run: python hello_world.py
+
+      - name: Deploy vis SSH                 # copy files via SSH (customize as needed)
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          scripts: |
+            echo "Hello World from GitHub Actions!" > /tmp/hello_world.txt
+            cat /tmp/hello_world.txt
+
+      - uses: actions/checkout@v4
+      - uses: akhileshns/heroku-deploy@v3.12.12        # deploys your app to Heroku on every push to main
+        with:
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: "<your-heroku-app-name>"
+          heroku_email: "<your-heroku-email>"
