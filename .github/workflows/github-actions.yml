@@ -19,7 +19,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: tedjung/node
+          images: tedjung/kibana7.3.1
           tag-semver: |
             {{version}}
             {{major}}.{{minor}}
